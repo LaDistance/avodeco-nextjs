@@ -1,0 +1,20 @@
+$content-width: 1000px;
+$breakpoint: 799px;
+$nav-height: 70px;
+$nav-background: #fff;
+$nav-font-color: #0c0c0c;
+$link-hover-color: #c497c0;
+
+.navbar {
+  height: $nav-height;
+  background: $nav-background;
+  // nice border bottom with $link-hover-color color
+  font-size: 1.2rem;
+}
+
+.divider {
+  height: $nav-height;
+  border-bottom: 1px solid rgb(121, 121, 121);
+  width: 95%;
+  margin: 0 auto;
+}
