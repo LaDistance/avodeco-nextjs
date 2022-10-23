@@ -1,4 +1,3 @@
-import { getURL } from "next/dist/shared/lib/utils";
 import NextImage from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
@@ -23,8 +22,8 @@ export default function SocialNetworkCard({
             // Visible box shadow on image
           }}
           src={imageUrl}
-          width={256}
-          height={256}
+          width={128}
+          height={128}
           alt={title}
         />
         <Title>{title}</Title>

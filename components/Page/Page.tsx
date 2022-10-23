@@ -41,5 +41,4 @@ const Wrapper = styled.div`
 
 const ChildrenWrapper = styled.div`
   margin-top: 2rem;
-  margin-bottom: 10rem;
 `;

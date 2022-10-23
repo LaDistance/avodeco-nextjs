@@ -5,12 +5,14 @@ interface BasicCardProps {
   title: string;
   description: string;
   imageUrl: string;
+  price: string | null;
 }
 
 export default function BasicCard({
   title,
   description,
   imageUrl,
+  price,
 }: BasicCardProps) {
   return (
     <Card>
@@ -27,6 +29,9 @@ export default function BasicCard({
       />
       <Title>{title}</Title>
       <Description>{description}</Description>
+      <Price>
+        {price ? `Disponible à partir de ${price}` : "Disponible sur devis"}
+      </Price>
     </Card>
   );
 }
@@ -41,12 +46,17 @@ const Card = styled.div`
   align-items: center;
   text-align: center;
   width: 100%;
-  border-radius: 0.6rem;
+  border-radius: 1rem;
   color: rgb(var(--text));
   font-size: 1.3rem;
 
   & > *:not(:first-child) {
     margin-top: 1rem;
+  }
+  :hover {
+    background-color: hsla(0, 0%, 71%, 0.664);
+    border: 0px;
+    transition: background-color 0.4s ease;
   }
 `;
 
@@ -57,4 +67,11 @@ const Title = styled.div`
 
 const Description = styled.div`
   opacity: 0.6;
+  width: 60%;
+  text-align: justify;
+`;
+
+const Price = styled.div`
+  font-weight: bold;
+  font-size: 1.5rem;
 `;

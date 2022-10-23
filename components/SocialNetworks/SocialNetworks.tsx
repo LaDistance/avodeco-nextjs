@@ -11,14 +11,18 @@ const FEATURES = [
     title: "Instagram",
   },
   {
-    imageUrl: "/Facebook_f_icon.svg",
+    imageUrl: "/Facebook_icon.svg",
     url: "https://www.facebook.com/profile.php?id=100080684193889",
     title: "Facebook",
   },
 ];
+
 export const SocialNetworks = () => {
   return (
     <Wrapper>
+      <Header>
+        <Title>Retrouvez toute notre actualité sur nos réseaux sociaux :</Title>
+      </Header>
       <CustomAutofitGrid>
         {FEATURES.map((singleFeature, idx) => (
           <SocialNetworkCard key={singleFeature.title} {...singleFeature} />
@@ -35,4 +39,15 @@ export const CustomAutofitGrid = styled(AutofitGrid)`
   ${media("<=phone")} {
     --autofit-grid-item-size: 100%;
   }
+`;
+
+export const Title = styled.h1`
+  margin-bottom: 2rem;
+`;
+
+export const Header = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 `;
