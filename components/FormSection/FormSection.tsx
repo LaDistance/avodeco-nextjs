@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import styled from "styled-components";
 import Button from "components/Button/Button";
 import MailSentState from "components/MailSentState/MailSentState";
@@ -18,7 +18,7 @@ export default function FormSection() {
   const { register, handleSubmit, formState } = useForm();
   const { isSubmitSuccessful, isSubmitting, isSubmitted, errors } = formState;
 
-  async function onSubmit(payload: EmailPayload) {
+  const onSubmit: SubmitHandler<any> = async (payload) => {
     try {
       const res = await fetch("/api/sendEmail", {
         method: "POST",
@@ -40,7 +40,7 @@ export default function FormSection() {
     }
 
     setHasSuccessfullySentMail(true);
-  }
+  };
 
   const isSent = isSubmitSuccessful && isSubmitted;
   const isDisabled = isSubmitting || isSent;
